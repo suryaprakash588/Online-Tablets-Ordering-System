@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Order Success - Mullai Medicals{% endblock %}
+
+{% block content %}
+<h1>Your order has been placed successfully!</h1>
+<p>Thank you for shopping with Mullai Medicals. We will process your order and deliver it soon.</p>
+<a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+{% endblock %}

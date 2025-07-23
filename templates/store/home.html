@@ -1,0 +1,43 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Home - Mullai Medicals{% endblock %}
+
+{% block content %}
+<style>
+  .home-background {
+    background-image: url("{% static 'store/images/background.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    padding: 50px 20px;
+  }
+
+  .home-background h1,
+  .home-background p {
+    color: black;
+  }
+</style>
+
+<div class="home-background" style="color:black">
+<h1 style="color: white;">Welcome to Mullai Medicals</h1>
+<p style="color: white;">Browse our featured medicines below:</p>
+
+
+  <div class="row">
+      {% for medicine in medicines %}
+          <div class="col-md-4">
+              <div class="card mb-4">
+                  <img src="{{ medicine.image.url }}" class="card-img-top" alt="{{ medicine.name }}">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ medicine.name }}</h5>
+                      <p class="card-text">{{ medicine.description|truncatewords:20 }}</p>
+                      <a href="{% url 'product_detail' pk=medicine.pk %}" class="btn btn-primary">View Details</a>
+                  </div>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

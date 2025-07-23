@@ -1,0 +1,68 @@
+/* product.css */
+/* General styling */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Product cards */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.2s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Image styling */
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Card body */
+.card-body {
+    padding: 1rem;
+    background-color: #fff;
+}
+
+/* Card title */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Card text */
+.card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004a99;
+}
+.medicine-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 100%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.medicine-img {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+}

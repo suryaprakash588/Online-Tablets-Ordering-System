@@ -1,0 +1,117 @@
+body {
+    background-image: url('amlo_300x300.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Headings for medicine categories */
+h4 {
+    margin-top: 30px;
+    color: #0d6efd; /* Bootstrap primary color */
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+/* Paragraphs describing the medicines */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Product card section */
+.card {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #198754; /* Bootstrap success green */
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #157347;
+}
+
+/* Custom products list section */
+.product {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Responsive layout spacing */
+.row.mt-5 {
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+body {
+    background-image: url('your-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.card-body .btn {
+  transition: background-color 0.3s ease;
+}
+
+.card-body .btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+

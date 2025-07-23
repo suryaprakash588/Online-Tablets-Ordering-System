@@ -1,0 +1,56 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="container mt-4 mb-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0"><i class="bi bi-house-door me-2"></i>My Addresses</h3>
+                </div>
+                <div class="card-body">
+                    <a href="{% url 'add_address' %}" class="btn btn-success mb-3">
+                        <i class="bi bi-plus-circle me-1"></i> Add New Address
+                    </a>
+                    
+                    {% if addresses %}
+                        <div class="list-group">
+                            {% for address in addresses %}
+                            <div class="list-group-item mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5>{{ address.full_name }}
+                                            {% if address.is_default %}
+                                                <span class="badge bg-success ms-2">Default</span>
+                                            {% endif %}
+                                        </h5>
+                                        <p class="mb-1">{{ address.address_line1 }}</p>
+                                        {% if address.address_line2 %}
+                                            <p class="mb-1">{{ address.address_line2 }}</p>
+                                        {% endif %}
+                                        <p class="mb-1">{{ address.city }}, {{ address.state }} - {{ address.postal_code }}</p>
+                                        <p class="mb-1">{{ address.country }}</p>
+                                        <p class="mb-1">Phone: {{ address.phone }}</p>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <a href="{% url 'edit_address' address.pk %}" class="btn btn-sm btn-outline-primary mb-1">
+                                            <i class="bi bi-pencil"></i> Edit
+                                        </a>
+                                        <a href="{% url 'delete_address' address.pk %}" class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle me-2"></i>You haven't saved any addresses yet.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

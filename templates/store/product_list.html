@@ -1,0 +1,21 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<h2>All Medicines</h2>
+<form method="get" action="{% url 'search' %}" class="mb-3">
+    <input type="text" name="q" class="form-control" placeholder="Search medicines...">
+</form>
+<div class="row">
+    {% for medicine in medicines %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <hover><img src="{{ medicine.image.url }}" class="card-img-top" alt="{{ medicine.name }}"></hover>
+            <div class="card-body">
+                <h5 class="card-title">{{ medicine.name }}</h5>
+                <p>₹{{ medicine.price }}</p>
+                <a href="{% url 'product_detail' medicine.pk %}" class="btn btn-sm btn-outline-primary">View</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

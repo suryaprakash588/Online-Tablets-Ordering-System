@@ -1,0 +1,123 @@
+/* Main container padding */
+.container {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Card styling */
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+/* Card header */
+.card-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 16px 20px;
+}
+
+/* Cart table */
+.table th, .table td {
+  vertical-align: middle;
+}
+
+/* Product thumbnail */
+.img-thumbnail {
+  border: none;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Quantity input */
+.quantity-input {
+  border: 1px solid #dee2e6;
+  height: 38px;
+  width: 60px;
+  font-weight: bold;
+  border-radius: 0 0 0 0;
+}
+
+/* Buttons */
+.btn-outline-secondary {
+  border-radius: 0;
+}
+
+/* Trash icon */
+.btn-danger i {
+  transition: transform 0.2s;
+}
+
+.btn-danger:hover i {
+  transform: scale(1.2);
+}
+
+/* Coupon input group */
+.input-group input.form-control {
+  border-radius: 6px 0 0 6px;
+}
+
+.input-group .btn {
+  border-radius: 0 6px 6px 0;
+}
+
+/* Empty cart message */
+.text-center i.bi-cart-x {
+  color: #adb5bd;
+}
+
+/* Alert info */
+.alert-info {
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+/* Order summary list */
+.list-group-item {
+  font-size: 1rem;
+  padding: 12px 18px;
+}
+
+.list-group-item.bg-light {
+  background-color: #f1f3f5 !important;
+}
+
+/* Checkout button */
+.btn-success {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .table thead {
+    display: none;
+  }
+
+  .table td {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .input-group {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,132 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}All Products - Mullai Medicals{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'store/css/product.css' %}">
+<h4>Paracetamol</h4>
+<p>Used to relieve mild to moderate pain (such as headaches, toothaches, backaches) and reduce fever.</p>
+
+<h4>Amoxicillin</h4>
+<p>A penicillin antibiotic used to treat various bacterial infections, including pneumonia, bronchitis, and infections of the ears, nose, throat, urinary tract, and skin.</p>
+
+<h4>Ibuprofen</h4>
+<p>A nonsteroidal anti-inflammatory drug (NSAID) used to reduce fever and treat pain or inflammation caused by conditions such as headaches, toothaches, back pain, arthritis, menstrual cramps, or minor injuries.</p>
+
+<h4>Metformin</h4>
+<p>Used alone or with other medications, including insulin, to treat type 2 diabetes by helping to control blood sugar levels.</p>
+
+<h4>Azithromycin</h4>
+<p>An antibiotic used to treat various bacterial infections, including respiratory infections, skin infections, ear infections, eye infections, and sexually transmitted diseases.</p>
+
+<h4>Amlodipine</h4>
+<p>A calcium channel blocker used to treat high blood pressure and angina (chest pain) by relaxing blood vessels and improving blood flow.</p>
+
+<h4>Losartan</h4>
+<p>An angiotensin II receptor blocker (ARB) used to treat high blood pressure, lower the risk of stroke, and treat kidney problems in patients with type 2 diabetes.</p>
+
+<h4>Atorvastatin</h4>
+<p>A statin used to lower cholesterol and triglyceride levels in the blood, helping to prevent heart disease, heart attacks, and strokes.</p>
+
+<h4>Pantoprazole</h4>
+<p>A proton pump inhibitor (PPI) used to treat conditions like GERD, stomach ulcers, and other acid-related disorders by reducing stomach acid production.</p>
+
+<h4>Omeprazole</h4>
+<p>Another PPI used to treat similar conditions as pantoprazole, including GERD and ulcers, by decreasing the amount of acid produced in the stomach.</p>
+
+<h4>Levothyroxine</h4>
+<p>A synthetic thyroid hormone used to treat hypothyroidism (an underactive thyroid), helping to restore normal energy and metabolism.</p>
+
+<h4>Cetirizine</h4>
+<p>An antihistamine used to relieve allergy symptoms such as runny nose, sneezing, itchy or watery eyes, and itching of the throat or nose.</p>
+
+<h4>Loratadine</h4>
+<p>Another antihistamine used to treat allergy symptoms, including hay fever and hives.</p>
+
+<h4>Montelukast</h4>
+<p>A leukotriene receptor antagonist used to prevent asthma attacks and treat allergies by reducing inflammation and constriction in the airways.</p>
+
+<h4>Dolo 650</h4>
+<p>A brand of paracetamol (650 mg) used to relieve pain and reduce fever.</p>
+
+<h4>Erythromycin</h4>
+<p>An antibiotic used to treat various bacterial infections, including respiratory tract infections, skin infections, and STDs.</p>
+
+<h4>Diclofenac</h4>
+<p>An NSAID used to treat pain and inflammatory disorders such as arthritis.</p>
+
+<h4>Ranitidine</h4>
+<p>A histamine-2 blocker that was used to reduce stomach acid, treating conditions like ulcers and GERD. (Withdrawn in many markets due to safety concerns.)</p>
+
+<h4>Domperidone</h4>
+<p>Used to relieve nausea and vomiting, and to increase stomach and bowel movement.</p>
+
+<h4>Chlorpheniramine</h4>
+<p>An antihistamine used to relieve symptoms of allergy, hay fever, and the common cold.</p>
+
+<h4>Dextromethorphan</h4>
+<p>A cough suppressant used to treat coughs caused by cold or flu.</p>
+
+<h4>Clavulanic Acid</h4>
+<p>Often combined with penicillin antibiotics to overcome resistance from beta-lactamase enzymes.</p>
+
+<h4>Tramadol</h4>
+<p>A pain reliever used to treat moderate to moderately severe pain.</p>
+
+<h4>Insulin</h4>
+<p>A hormone used to control blood sugar in people with diabetes.</p>
+
+<h4>Ciprofloxacin</h4>
+<p>An antibiotic used to treat bacterial infections like UTIs, respiratory and skin infections.</p>
+
+<h4>Norfloxacin</h4>
+<p>An antibiotic mainly used to treat urinary tract infections.</p>
+
+<h4>Zincovit</h4>
+<p>A multivitamin and multimineral supplement for treating or preventing deficiencies.</p>
+
+<h4>Becosules</h4>
+<p>A vitamin B-complex supplement for treating vitamin B deficiencies.</p>
+
+<h4>Folic Acid</h4>
+<p>A B vitamin used to treat or prevent folate deficiency and anemia.</p>
+
+<h4>Calcium D3</h4>
+<p>A supplement containing calcium and vitamin D3 for bone health.</p>
+
+<h4>D3 Must</h4>
+<p>A vitamin D3 supplement for treating vitamin D deficiency.</p>
+
+<h4>Neurobion Forte</h4>
+<p>A combination of B vitamins for nerve health and vitamin B deficiency.</p>
+
+<h4>ORS Powder</h4>
+<p>Oral rehydration salts to prevent or treat dehydration caused by diarrhea.</p>
+
+<h4>ORS Liquid</h4>
+<p>Liquid oral rehydration solution to prevent or treat dehydration.</p>
+
+<div class="row mt-5">
+    {% for medicine in medicines %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ medicine.image.url }}" class="card-img-top" alt="{{ medicine.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ medicine.name }}</h5>
+                    <p class="card-text">{{ medicine.description|truncatewords:20 }}</p>
+                    <a href="{% url 'product_detail' pk=medicine.pk %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% for product in products %}
+  <div class="product">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Price: ₹{{ product.price }}</p>
+    <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+  </div>
+{% endfor %}   
+</div>
+{% endblock %}
